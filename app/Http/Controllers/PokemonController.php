@@ -196,7 +196,7 @@ class PokemonController extends Controller
      *                     ),
      *                     @OA\Property(
      *                         property="team_id",
-     *                         type="string",
+     *                         type="integer",
      *                     ),
      *                 )
      *             )
@@ -230,7 +230,7 @@ class PokemonController extends Controller
      *                     ),
      *                     @OA\Property(
      *                         property="team_id",
-     *                         type="string",
+     *                         type="integer",
      *                     ),
      *                 )
      *             )
@@ -263,7 +263,7 @@ class PokemonController extends Controller
      *                     ),
      *                     @OA\Property(
      *                         property="team_id",
-     *                         type="string",
+     *                         type="integer",
      *                     ),
      *                 )
      *             )
