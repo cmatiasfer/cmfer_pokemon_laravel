@@ -19,5 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 }); 
 */
-Route::get('/api/v1', [ PokemonController::class, 'index' ])->name('pokemon_listado');
+Route::get('/api/v1/pokemon/{name}', [ PokemonController::class, 'pokemon' ])->name('pokemon');
+Route::get('/api/v1/pokemons/type/{type}', [ PokemonController::class, 'pokemonByType' ])->name('pokemon_by_type');
 

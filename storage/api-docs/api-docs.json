@@ -1,0 +1,203 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Pokemon API",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/v1/pokemon/{name}": {
+            "get": {
+                "description": "Datos de Pokemon",
+                "operationId": "04cd3c9f58419d9cad6ea82f8601464e",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "El parametro 'name' es necesario para filtrar",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Datos de pokemon en JSON.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "pok_id": {
+                                            "type": "integer"
+                                        },
+                                        "pok_name": {
+                                            "type": "string"
+                                        },
+                                        "pok_height": {
+                                            "type": "integer"
+                                        },
+                                        "pok_weight": {
+                                            "type": "integer"
+                                        },
+                                        "pok_base_experience": {
+                                            "type": "integer"
+                                        },
+                                        "type": {
+                                            "description": "The response data",
+                                            "type": "array",
+                                            "items": {}
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "No se ha encontrado pokemon.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/pokemons/type/{type}": {
+            "get": {
+                "description": "Pokemons por Tipo",
+                "operationId": "e368f869243143e902b9170416d1c4bc",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "path",
+                        "description": "El parametro 'type' es necesario para filtrar",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Datos de Pokemons en JSON.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "pok_id": {
+                                            "type": "integer"
+                                        },
+                                        "pok_name": {
+                                            "type": "string"
+                                        },
+                                        "pok_height": {
+                                            "type": "integer"
+                                        },
+                                        "pok_weight": {
+                                            "type": "integer"
+                                        },
+                                        "pok_base_experience": {
+                                            "type": "integer"
+                                        },
+                                        "type": {
+                                            "description": "The response data",
+                                            "type": "array",
+                                            "items": {}
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/team/{teamId}/pokemon/{pokemonId}": {
+            "put": {
+                "description": "Edicion de team",
+                "operationId": "e7652fb2a342cf2629077f69127aa93e",
+                "responses": {
+                    "200": {
+                        "description": "Agrega un pokemon a un equipo determinado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "pok_id": {
+                                            "type": "integer"
+                                        },
+                                        "team_id": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "ID invalid"
+                    }
+                }
+            },
+            "post": {
+                "description": "Agrega un nuevo pokemon al equipo",
+                "operationId": "faad7a488430e75802eea70d748bedec",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "pok_id": {
+                                            "type": "integer"
+                                        },
+                                        "team_id": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "ID invalid"
+                    }
+                }
+            },
+            "delete": {
+                "description": "Elimina un pokemon de un equipo determinado",
+                "operationId": "ad6c38646fcd967c392695dfdc3efe49",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "pok_id": {
+                                            "type": "integer"
+                                        },
+                                        "team_id": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "ID invalid"
+                    }
+                }
+            }
+        }
+    }
+}
